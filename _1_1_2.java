@@ -10,9 +10,9 @@ public class _1_1_2 {
 		int a = 3400000;
 		int b = 567;
 		System.out.println("a = " + a + ", b = " + b);
-		a =a + b ;
+		a = a + b ;
 		b = a - b;
-		a =a - b;
+		a = a - b;
 		System.out.println("reverse");
 		System.out.println("a = " + a + ", b = " + b);
 
