@@ -1,12 +1,38 @@
-def _1_1_5(a: int, b: int):
-	""" Даны натуральные числа а, b . Вычислить произведение a*b,
-	    используя в программе лишь операции +, -, =, <>.
-	"""
-	sum, k = 0, 0
-	while k != b:
-		sum += a
-		k += 1
-	return sum
+def sh_1_1_5(a: int, b: int):
+    """
+        Вычисление a*b, используя лишь операции +, -, =, <>.
+    """
 
-a = _1_1_5(5, 6)
-print(a)
+    sign = 1
+
+    if a < 0:
+        a = -a
+        sign = -sign
+
+    if b < 0:
+        b = -b
+        sign = -sign
+
+    if a < b:
+        a += b
+        b = a - b
+        a -= b
+
+    sum, k = 0, 0
+    while k != b:
+        sum += a
+        k++
+    return sum * sign
+
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_5(2, 5) == 2 * 5
+    assert sh_1_1_5(5, 2) == 5 * 2
+    assert sh_1_1_5(3, -4) == 3 * -4
+    assert sh_1_1_5(-5, -8) == -5 * -8
+    assert sh_1_1_5(4, 0) == 4 * 0
+    assert sh_1_1_5(sh_1_1_5(2, 3), sh_1_1_5(2, -4)) == (2 * 3) * (2 * -4)
+
+    print('Done!')
