@@ -1,12 +1,23 @@
-def _1_1_8(n: int):
-	""" Дано натуральное n, вычислить n! (0! = 1, n! = n · (n − 1)!).
-	"""
-	m = 1
+def sh_1_1_8(n: int):
+    """
+        Вычисление n!.
+    """
 
-	for k in range(1, n + 1):
-		m *= k
+    m = 1
 
-	return m
+    for k in range(1, n + 1):
+        m *= k
 
-a = _1_1_8(3)
-print(a)
+    return m
+
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_8(1) == 1
+    assert sh_1_1_8(0) == 1
+    assert sh_1_1_8(3) == 6
+    assert sh_1_1_8(5) == 120
+    assert sh_1_1_8(10) == 3628800
+
+    print('Done!')

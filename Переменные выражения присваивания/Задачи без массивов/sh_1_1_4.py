@@ -8,7 +8,7 @@
         if k % 2 == 0:
             k /= 2
             c *= c
-        k--
+        k -= 1
         b *= c
     return b
 

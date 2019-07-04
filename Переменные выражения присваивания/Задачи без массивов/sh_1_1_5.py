@@ -1,17 +1,8 @@
 def sh_1_1_5(a: int, b: int):
     """
-        Вычисление a*b, используя лишь операции +, -, =, <>.
+        Вычисление a * b (a и b - натуральные), используя лишь операции
+                +, -, =, <>.
     """
-
-    sign = 1
-
-    if a < 0:
-        a = -a
-        sign = -sign
-
-    if b < 0:
-        b = -b
-        sign = -sign
 
     if a < b:
         a += b
@@ -21,8 +12,8 @@ def sh_1_1_5(a: int, b: int):
     sum, k = 0, 0
     while k != b:
         sum += a
-        k++
-    return sum * sign
+        k += 1
+    return sum
 
 
 if __name__ == '__main__':
@@ -30,9 +21,9 @@ if __name__ == '__main__':
 
     assert sh_1_1_5(2, 5) == 2 * 5
     assert sh_1_1_5(5, 2) == 5 * 2
-    assert sh_1_1_5(3, -4) == 3 * -4
-    assert sh_1_1_5(-5, -8) == -5 * -8
+    assert sh_1_1_5(3, 44) == 3 * 44
+    assert sh_1_1_5(1, 8) == 1 * 8
     assert sh_1_1_5(4, 0) == 4 * 0
-    assert sh_1_1_5(sh_1_1_5(2, 3), sh_1_1_5(2, -4)) == (2 * 3) * (2 * -4)
+    assert sh_1_1_5(sh_1_1_5(2, 3), sh_1_1_5(2, 14)) == (2 * 3) * (2 * 14)
 
     print('Done!')
