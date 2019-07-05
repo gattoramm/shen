@@ -1,20 +1,29 @@
-def sh_1_1_13_2(a: int, b: int):
-    """ Даны два натуральных числа a и b, не равные нулю одновременно.
-        Вычислить НОД(a,b) — наибольший общий делитель а и b.
-        Fлгоритм Евклида. Будем считать, что НОД(0,0)=0. Тогда
-        НОД(a,b) = НОД(a-b,b) = НОД(a,b-a); НОД(a,0) = НОД(0,a) = a
-        для всех a,b > 0.
+def sh_1_1_13_2( a: int, b: int ) -> int:
     """
+        Вычисление НОД(a,b) алгоритмом Евклида.
+    """
+
     m, n = a, b
 
-    while  not(m == 0 or n == 0) :
-        if n <= m:
-            m -= n
-        else:
+    while not( m == 0 or n == 0 ) :
+        if n > m:
             n -= m
+        else:
+            m -= n
 
     if m == 0: return n
-    if n == 0: return m
 
-a = sh_1_1_13_2(6*90, 7*8)
-print(a)
+    return m
+
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_13_2( 1, 10 ) == 1
+    assert sh_1_1_13_2( 3, 57 ) == 3
+    assert sh_1_1_13_2( 7 * 2 * 3, 57864 ) == 6
+    assert sh_1_1_13_2( 4, 0 ) == 4
+    assert sh_1_1_13_2( 0, 4 ) == 4
+    assert sh_1_1_13_2( 6, 6 ) == 6
+
+    print('Done!')

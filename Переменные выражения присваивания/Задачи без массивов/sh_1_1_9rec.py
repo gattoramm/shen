@@ -1,15 +1,25 @@
-def sh_1_1_9rec(n: object) -> object:
-    """ Последовательность Фибоначчи определяется так:
-	    a(0) = 0, a(1)=1,a(k)=a(k-1)+a(k-2) при k>2.
-	    Дано n, вычислить a(n).
-	"""
+def sh_1_1_9rec( n : int) -> int:
+    """
+        Вычисление последовательности Фибоначчи рекурсивно с запоминанием
+    """
+
     A = {0: 0, 1: 1}
 
     if n in A:
         return A[n]
 
-    A[n] = sh_1_1_9rec(n - 1) + sh_1_1_9rec(n - 2)
+    A[n] = sh_1_1_9rec( n - 1 ) + sh_1_1_9rec( n - 2 )
+
     return A[n]
 
-a = sh_1_1_9rec(10)
-print(a)
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_9rec( 1 ) == 1
+    assert sh_1_1_9rec( 0 ) == 0
+    assert sh_1_1_9rec( 4 ) == 3
+    assert sh_1_1_9rec( 15 ) == 610
+    assert sh_1_1_9rec( 10 ) == 55
+
+    print('Done!')

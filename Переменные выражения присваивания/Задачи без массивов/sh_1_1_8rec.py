@@ -1,10 +1,20 @@
-def _1_1_8rec(n: int):
-	""" Дано натуральное n, вычислить n! (0! = 1, n! = n · (n − 1)!).
-	    МЕТОДОМ РЕКУРСИИ
-	"""
-	if n != 0:
-		return n * _1_1_8rec(n - 1)
-	return 1
+def sh_1_1_8rec(n: int) -> int:
+    """
+        Вычисление n! методом рекурсии
+    """
 
-a = _1_1_8rec(4)
-print(a)
+    if n != 0:
+        return n * sh_1_1_8rec( n - 1 )
+    return 1
+
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_8rec( 1 ) == 1
+    assert sh_1_1_8rec( 0 ) == 1
+    assert sh_1_1_8rec( 3 ) == 6
+    assert sh_1_1_8rec( 5 ) == 120
+    assert sh_1_1_8rec( 10 ) == 3628800
+
+    print('Done!')

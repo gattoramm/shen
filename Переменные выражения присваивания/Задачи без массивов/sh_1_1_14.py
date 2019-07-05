@@ -1,20 +1,29 @@
-def sh_1_1_14(a: int, b: int):
-    """ Написать модифицированный вариант алгоритма Евклида,
-        использующий соотношения НОД(a,b) = НОД(a mod b, b) при a > b,
-        НОД(a,b) = НОД(a, b mod a) при b > a. Для всех a,b > 0.
+def sh_1_1_14( a: int, b: int ) -> int:
+    """
+        Вычисление НОД(a,b) модифицированным вариантом алгоритма Евклида.
     """
 
+    
     if a < b:
         a, b = b, a
 
-    r = a%b
 
-    while not( r == 0 ):
-        a = r
+
+    while not( 0 == b or 0 == a%b ):
+        a = a%b
         if a < b:
             a, b = b, a
-        r = a%b
+
     return b
 
-a = sh_1_1_14(6*90, 7*8)
-print(a)
+
+if __name__ == '__main__':
+    print('Check examples...')
+
+    assert sh_1_1_14( 1, 10 ) == 1
+    assert sh_1_1_14( 3, 57 ) == 3
+    assert sh_1_1_14( 7 * 2 * 3, 57864 ) == 6
+    #assert sh_1_1_14( 4, 0 ) == 4
+    assert sh_1_1_14( 6, 6 ) == 6
+
+    print('Done!')
