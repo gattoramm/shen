@@ -1,4 +1,4 @@
-def sh_1_1_9( n: int ) -> int:
+def sh_1_1_9(n: int) -> int:
     """
         Вычисление последовательности Фибоначчи
     """
@@ -14,10 +14,10 @@ def sh_1_1_9( n: int ) -> int:
 if __name__ == '__main__':
     print('Check examples...')
 
-    assert sh_1_1_9( 1 ) == 1
-    assert sh_1_1_9( 0 ) == 0
-    assert sh_1_1_9( 4 ) == 3
-    assert sh_1_1_9( 15 ) == 610
-    assert sh_1_1_9( 10 ) == 55
+    assert sh_1_1_9(1) == 1
+    assert sh_1_1_9(0) == 0
+    assert sh_1_1_9(4) == 3
+    assert sh_1_1_9(15) == 610
+    assert sh_1_1_9(10) == 55
 
     print('Done!')
