@@ -6,7 +6,6 @@ def sh_1_1_16(a: int, b: int) -> (int, int, int):
 
     p, q = 1, 0
     r, s = 0, 1
-    d = x = y = 0
 
     while not(a == 0 or b == 0):
         if b < a:
@@ -21,16 +20,9 @@ def sh_1_1_16(a: int, b: int) -> (int, int, int):
             s -= k * q
 
     if a == 0:
-        d = b
-        x = r
-        y = s
+        return b, r, s
 
-    if b == 0:
-        d = a
-        x = p
-        y = q
-
-    return d, x, y
+    return a, p, q
 
 
 if __name__ == '__main__':
