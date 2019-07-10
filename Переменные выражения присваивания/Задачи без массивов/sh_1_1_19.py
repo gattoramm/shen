@@ -1,9 +1,6 @@
 def sh_1_1_19(a: int, b: int) -> (int, int, int):
     """
-
-    :param a:
-    :param b:
-    :return:
+        111
     """
 
     p, q = 1, 0
@@ -15,11 +12,11 @@ def sh_1_1_19(a: int, b: int) -> (int, int, int):
             #b //= 2
 
         if a % 2 == 0 and b % 2 == 0 and b < a:
-            k = a // 2
-            a -= k * 2
-            p -= k * r
-            q -= k * s
-        else:
+            a /= 2
+            b /= 2
+            p -= 2 * r
+            q -= 2 * s
+        elif a % 2 == 0 and b % 2 == 0 and b >= a:
             k = b // a
             b -= k * a
             r -= k * p

@@ -9,14 +9,22 @@ def sh_1_1_7(a: int, d: int) -> (int, int):
     while r >= d:
         r -= d
         q += 1
+
     return q, r
 
-
 if __name__ == '__main__':
-    print('Check examples...')
 
-    assert sh_1_1_7(19, 5) == (3, 4)
-    assert sh_1_1_7(25, 5) == (5, 0)
-    assert sh_1_1_7(17, 4) == (4, 1)
+    import random
+
+    num_tests = random.randrange(1, 1000, 1)
+    random_values = []
+
+    for __ in range(num_tests):
+        random_values.append((random.randrange(1, 10000, 1), random.randrange(1, 10000, 1)))
+
+    print('Check', num_tests, 'examples...')
+
+    for i in random_values:
+        assert sh_1_1_7(i[0], i[1])  == (i[0] // i[1], i[0] % i[1])
 
     print('Done!')
